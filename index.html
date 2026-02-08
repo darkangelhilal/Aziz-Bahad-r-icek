@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aziz Bahadır Çiçek 🤍</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #3a0000, #000000);
+  font-family: 'Georgia', serif;
+  color: white;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ARKA PLAN SABİT KALPLER */
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+.bg span {
+  position: absolute;
+  font-size: 22px;
+  opacity: 0.35;
+  animation: pulseBg 2s infinite;
+}
+@keyframes pulseBg {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.container {
+  z-index: 2;
+  padding: 20px;
+}
+
+/* ANA KALP */
+.heart {
+  font-size: 90px;
+  margin: 25px 0;
+  cursor: pointer;
+  animation: pulseHeart 1s infinite;
+}
+@keyframes pulseHeart {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+h1 {
+  color: #ffb6c1;
+}
+
+.text {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 22px;
+  border-radius: 20px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* GİZLİ YAZI */
+.secret {
+  opacity: 0;
+  margin-top: 25px;
+  transition: opacity 2s;
+}
+.secret.show {
+  opacity: 1;
+}
+</style>
+</head>
+
+<body>
+
+<!-- SABİT ARKA PLAN KALPLER -->
+<div class="bg">
+  <span style="top:10%; left:15%">🩷</span>
+  <span style="top:20%; left:70%">🤍</span>
+  <span style="top:50%; left:30%">♥️</span>
+  <span style="top:65%; left:80%">😻</span>
+  <span style="top:75%; left:10%">😽</span>
+</div>
+
+<div class="container">
+  <h1>Aziz Bahadır Çiçek 😽</h1>
+
+  <div class="text">
+    Ömrüm ömrüne yoldaş olsun sevdiğim yakışıklım 🫠🩷  
+    <br>Kalbim sana her attığında “iyi ki” diyor 🤍
+  </div>
+
+  <div class="heart" id="heart">♥️</div>
+
+  <button id="songBtn">Bizim Şarkımız 🎶</button>
+
+  <div class="secret" id="secret">
+    Haklısın yakışıklım 😻  
+    <br>Bizim aşkımız <b>sanki</b>lerle dolu değil,  
+    <br><b>keşke</b>lerle hiç değil…  
+    <br>Sadece <b>ben</b> ve <b>sen</b> ile dolu 🤍  
+    <br><br>
+    Seni seviyorum hayatım 🫠🤍
+  </div>
+</div>
+
+<audio id="song" src="bizim_sarkimiz.mp3"></audio>
+
+<script>
+const btn = document.getElementById("songBtn");
+const heart = document.getElementById("heart");
+const song = document.getElementById("song");
+const secret = document.getElementById("secret");
+
+btn.onclick = () => {
+  song.play();
+  heart.textContent = "🤍";
+  secret.classList.add("show");
+};
+</script>
+
+</body>
+</html>
